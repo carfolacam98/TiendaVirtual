@@ -1,0 +1,7 @@
+use('storedb')
+db.products.insertOne({
+  name:"iphone",
+  prince:10000,
+  descripcion:"hola",
+  category:'smartphone'
+})

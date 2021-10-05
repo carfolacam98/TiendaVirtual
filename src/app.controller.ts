@@ -1,6 +1,8 @@
 import { Controller, Get,Param,Query } from '@nestjs/common';
 import { AppService } from './app.service';
-
+//se deben recibir primero rutas que no son dinamicos de los que si lo son
+//los dinamicos son los que reciben parametros
+//en este caso es entre product/filter y product/id
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
@@ -14,22 +16,8 @@ export class AppController {
   newEndpoint(){
     return 'Yo soy un nuevo endpoint'
   }
-  @Get('product/:id')
-  getProduct(@Param("id") id:number){
-    return `product ${id}`
-  }
 
-  //En elednpoint query se ve como asi http://localhost:3000/products?limit=100&offset=50
-  //es decir que uno lo asignaaa!!
-  @Get('products')
-  getProducts(@Query('limit') limit:number,
-  @Query('offset') offset:number,
-  @Query('brand') brand:number){
 
-    return `product ${limit} &  ${offset} &  ${brand}`
-  }
-  @Get('categories/:categoryWord/product/:id')
-  getCategories(@Param("id") id:number,@Param("categoryWord") categoryWord:string){
-    return `product ${id} in category ${categoryWord}`
-  }
+
+
 }
