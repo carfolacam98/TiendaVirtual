@@ -1,5 +1,6 @@
 ﻿# TiendaVirtual
 ## Codigos Utiles
+___Iniciar ambiente___
 npm run start:dev
-### Para crear controladores puedes usar el generador de código de NestJS con el siguiente comando:
+### Crear controladores usando el generador de código de NestJS :
 nest g co controllers/categories --flat
